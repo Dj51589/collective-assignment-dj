@@ -1,0 +1,9 @@
+<div class="app-container flex v-align-c h-100 flex-column">
+  <div>
+    <h2>
+      {{userInput ? userInput : 'Public'}} Gist Details
+    </h2>
+  </div>
+  <app-search-input class="search-container" (onSearch)="search($event);"></app-search-input>
+  <app-gitst-results class="h-100" [userName]="userInput"></app-gitst-results>
+</div>

@@ -1,0 +1,16 @@
+<div class="flex search-box v-align-c">
+    <div class="search-icon">
+        <img src="../assets/images/search.png" class="w-20 h-20" />
+    </div>
+    <div class="search-input">
+        <input type="text" class="w-100" [(ngModel)]="searchInput" 
+        placeholder="enter user name to search gist">
+    </div>
+    <div *ngIf="searchInput" class="search-btn flex v-align-c">
+        <img src="../../../assets/images/reset.png" class="cursor-pointer w-20 h-20 m-r-xxs" 
+        (click)="resetGist();">
+        <button (click)="searchGist();">
+            Search
+        </button>
+    </div>
+</div>

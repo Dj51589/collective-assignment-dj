@@ -1,0 +1,49 @@
+<div class="flex h-100" [ngClass]="{'section-loader': loader}">
+    <div *ngIf="!loader && gistData && gistData.length > 0" class="h-100 o-a flex flex-wrap w-100 gist-container">
+        <div *ngFor="let gist of gistData" class="gist flex">
+            <div class="left-side flex flex-column justify-center left-side v-align-c">
+                <span>
+                    <img [src]="gist.owner.avatar_url" class="user-image" />
+                </span>
+                <span class="user-name flex">
+                    <a href="{{gist.owner.html_url}}">{{gist.owner.login}}</a>
+                </span>
+            </div>
+            <div class="flex flex-column right-side">
+                <div class="details-desc truncate-text" title="{{gist.description}}">
+                    {{gist.description}}
+                </div>
+                <div class="flex v-align-c">
+                    <img src="../assets/images/update.png" class="w-15 h-15 m-r-xxs">
+                    {{gist.updated_at | date: 'dd/MM/yyyy, hh:mm a'}}
+                </div>
+                <div>
+                    <span class="tag" *ngFor="let tag of gist.tags">
+                        #{{tag}}
+                    </span>
+                </div>
+                <div class="flex v-align-c forked-user">
+                    <div class="flex v-align-c m-r-xxs">
+                        <img class="w-15 h-15 m-r-xxs" src="../assets/images/fork.png">
+                        <span class="counter flex v-align-c justify-center img-circle">{{gist.forks ? gist.forks.length
+                            : 0}}</span>
+                    </div>
+                    <div class="flex flex-column v-align-c" *ngIf="gist.forks && gist.forks.length > 0">
+                        <div class="flex v-align-c" *ngFor="let fork of gist.forks">
+                            <span class="m-r-xxs">
+                                <img [src]="fork.user.avatar_url" class="w-20 h-20 img-circle">
+                            </span>
+                            <span class="flex v-align-c">
+                                <a href="{{fork.user.html_url}}">{{fork.user.name}}</a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="!loader && !gistData" class="h-100">
+        <app-no-record></app-no-record>
+    </div>
+</div>

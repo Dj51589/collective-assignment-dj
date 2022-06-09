@@ -1,0 +1,53 @@
+.gist-container {
+    margin: 20px;
+    .gist {
+        min-height: 180px;
+        border: 1px solid #dedede;
+        padding: 10px;
+        margin: 10px;
+        border-radius: 8px;
+        max-width: calc( calc(calc(100% - 160px) / 4) - 2px);
+        min-width: calc( calc(calc(100% - 160px) / 4) - 2px);
+        box-shadow: 0 3px 16px 0 rgb(0 0 0 / 11%);
+        .left-side {
+            border-right: 1px solid #dedede;
+            padding: 0px 5px;
+            min-width: 100px;
+            max-width: 100px;
+            .user-name {
+                word-break: break-word;
+                margin-top: 5px;
+                a {
+                    text-align: center;
+                }
+            }
+        }
+        .right-side {
+            margin-left: 10px;
+            overflow-x: hidden;
+            overflow-y: auto;
+            width: 100%;
+            > div {
+                margin: 5px 0px;
+            }
+        }
+        a {
+            color: black;
+            text-decoration: none;
+            outline: none;
+        }
+        .counter {
+            padding: 5px;
+            height: 10px;
+            width: 10px;
+        }
+    }
+    .user-image {
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+    }
+    .tag {
+        color: #1876f2;
+    }
+}

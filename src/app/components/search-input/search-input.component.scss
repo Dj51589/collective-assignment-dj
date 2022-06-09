@@ -1,0 +1,30 @@
+.search-box {
+    border: 1px solid #dedede;
+    border-radius: 20px;
+    padding: 10px;
+    min-height: 40px;
+    .search-icon {
+        margin: 0px 10px;
+    }
+    .search-input {
+        flex: 1;
+        input[type="text"] {
+            outline: none;
+            border: none;
+        }
+    }
+    .search-btn {
+        bottom: unset;
+        margin: 0px 10px;
+        button {
+            padding: 0px;
+            height: 40px;
+            width: 100px;
+            border-radius: 8px;
+            background: #222;
+            color: white;
+            box-shadow: none;
+            outline: none;
+        }
+    }
+}
